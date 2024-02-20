@@ -1,0 +1,121 @@
+---
+title: "Data wrangling + functions"
+subtitle: "Challenge 1"
+author: "YOUR NAME"
+format: 
+  html:
+    self-contained: true
+---
+
+# Instructions
+
+Complete all parts of the Exercises section below to earn a Pass for this challenge.
+
+**Submission:** Click the "Render" button in RStudio to knit a self-contained HTML with all images embedded. Commit and push changes to this file as well as the generated HTML. Push your changes to GitHub by midnight on Monday 2/26. (GitHub classroom automatically creates a pull request for receiving feedback.)
+
+
+
+# Overview
+
+You will be recreating core functionality of a few functions in the `janitor` [package](https://cran.r-project.org/package=janitor).
+
+# Exercise 1: `clean_names()`
+
+Look at the [example usage](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html#clean-dataframe-names-with-clean_names) for the `clean_names()` function, and look at the documentation for this function with `?clean_names`.
+
+Your function should:
+
+- Create variable names in `snake_case` when there are spaces in the column name.
+- Convert `%` to "percent" and `#` to "number" to retain meaning.
+- Remove non-alphanumeric characters (other than `%` and `#`).
+- Append numbers to duplicated names. (e.g., If there are two variables called `var`, they should be renamed as `var1` and `var2`.)
+
+DON'T worry about:
+
+- Turning `firstName` into `first_name`.
+- Handling special characters with accents.
+
+```{r clean_names}
+
+```
+
+Demonstrate that your function works by showing output on test cases. Your test cases should cover all the items in the "Your function should:" section.
+
+```{r clean_names_test}
+
+```
+
+
+
+
+
+# Exercise 2: `top_levels()`
+
+Look at the [example usage](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html#count-factor-levels-in-groups-of-high-medium-and-low-with-top_levels) for the `top_levels()` function, and look at the documentation for this function with `?top_levels`.
+
+Your function should:
+
+- Include an argument `n` that gives the number of levels to include in top and bottom groups
+- Have the first column of output show the categories `Low`, `Medium`, and `High`
+- Have a `print()` statement that shows the categories in the `Low`, `Medium`, and `High` groups. (Example: `"Low includes: disagree, strongly disagree. Medium includes: neutral. High includes: strongly agree, agree")
+- Use functions in the `forcats` package
+- Automatically calculate a percentage column
+
+DON'T worry about:
+
+- Including the `show_na` argument
+
+```{r top_levels}
+
+```
+
+Demonstrate that your function works by showing output on test cases. Your test cases should cover all the items in the "Your function should:" section.
+
+```{r top_levels_test}
+
+```
+
+
+
+
+
+# Exercise 3: `get_dupes()`
+
+Look at the [example usage](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html#explore-records-with-duplicated-values-for-specific-combinations-of-variables-with-get_dupes) for the `get_dupes()` function, and look at the documentation for this function with `?get_dupes`.
+
+Your function should:
+
+- Have a `data` argument for the data frame
+- Have a single argument called `vars` that takes the potentially multiple variables used to form groups (in contrast to the `...` you see on the documentation page)
+
+```{r get_dupes}
+
+```
+
+Demonstrate that your function works by showing output on test cases. Your test cases should cover all the items in the "Your function should:" section.
+
+```{r get_dupes_test}
+
+```
+
+
+
+
+
+# Exercise 4: `numeric_to_date()`
+
+(Note: This exercise is inspired by `janitor::excel_numeric_to_date()` but has been modified.) Create a function that takes a vector of integers in month-day-year format and represents it as a Date vector.
+
+Your function should:
+
+- Represent `41123` as "April 11, 2023" and `4123` as "April 1, 2023" (for example)
+
+```{r numeric_to_date}
+
+```
+
+Demonstrate that your function works by showing output on test cases. Your test cases should cover all the items in the "Your function should:" section.
+
+```{r numeric_to_date_test}
+
+```
