@@ -104,6 +104,8 @@ Demonstrate that your function works by showing output on test cases. Your test 
 
 # Exercise 4: `numeric_to_date()`
 
+***SKIP THIS ONE!***
+
 (Note: This exercise is inspired by `janitor::excel_numeric_to_date()` but has been modified.) Create a function that takes a vector of integers in month-day-year format and represents it as a Date vector.
 
 Your function should:
